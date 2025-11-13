@@ -1,0 +1,447 @@
+---
+title: "Evaluating Disturbance Impacts on Sediment Carbon Storage in *Halophila stipulacea* in St. Thomas, U.S. Virgin Islands"
+subtitle: "Advisor: Dr. Guilherme Corte<br>Committee Members: Dr. John Lefcheck, Dr. Kristin Wilson Grimes, and Dr. Lincoln Critchley"
+author: "Hannah Ferraro"
+format: html
+toc: true
+toc-depth: 7   # how many heading levels to show
+toc-location: left
+---
+
+# Introduction
+
+Seagrass meadows are foundation coastal habitats that support biodiversity, fisheries, shoreline protection, and water quality, while also acting as important blue carbon sinks by trapping and storing organic carbon in their sediments over long timescales (Barbier et al., 2011; Cullen-Unsworth & Unsworth, 2013; Fourqurean et al., 2012; Duarte et al., 2013; Macreadie et al., 2015). Although they cover only \~0.1–0.2% of the global seafloor, seagrasses contribute disproportionately to global oceanic carbon burial due to efficient trapping of fine sediments and the accumulation of organic matter under largely anoxic conditions (Duarte et al., 2005, 2013; McLeod et al., 2011; Enríquez et al., 1993). However, this carbon is not permanently secure: physical, biological, and anthropogenic disturbances can erode sediments, remobilize centuries of stored carbon, and reduce the long-term carbon storage capacity of meadows (Boudouresque et al., 2009; Krause-Jensen & Duarte, 2016; Serrano et al., 2016; Vaughn et al., 2024).
+
+In the Caribbean, native species like *Thalassia testudinum* have historically provided extensive habitat and carbon storage, while the invasive *Halophila stipulacea* is rapidly expanding and reshaping seagrass communities in the U.S. Virgin Islands and across the wider region (Willette & Ambrose, 2009; Willette et al., 2014; Van Tussenbroek et al., 2016; Winters et al., 2020). *H. stipulacea* can form dense mats that stabilize sediments and, under some conditions, store carbon at levels comparable to native species, but its shallow root system, altered canopy structure, and tendency to form monocultures may change how carbon is stored and released, especially following disturbance (Jensen, 2018; Apostolaki et al., 2019; Brenner et al., 2024; Vaughn et al., 2024). These changes raise questions about whether *H. stipulacea* functions primarily as a short-term sediment stabilizer or as a robust long-term carbon sink in dynamic, hurricane-impacted environments (Duarte et al., 2013; Macreadie et al., 2015).
+
+This thesis investigates how physical disturbance affects sediment carbon storage and recovery in *H. stipulacea* meadows across bays in St. Thomas, U.S. Virgin Islands. By linking disturbance and recolonization dynamics with meadow structure and sediment properties (including grain size and organic carbon content), this work addresses key knowledge gaps about when *H. stipulacea* functions as a carbon sink versus a carbon source and how its continued spread may influence blue-carbon resilience and management in Caribbean seagrass ecosystems (Lavery et al., 2013; Rotini et al., 2017; Smulders et al., 2017; Serrano et al., 2016; Vaughn et al., 2024).
+
+# Methods
+
+## Site Selection
+
+This study was conducted in St. Thomas, U.S. Virgin Islands, an unincorporated territory of the United States in the eastern Caribbean. Sites were selected through preliminary snorkel surveys conducted between May and July of 2025. Snorkelers were deployed at three locations, Fortuna Bay (FB), Lindbergh Bay (LB), and Brewers Bay (BB), St. Thomas, USVI, to verify that each site met the basic requirements for this study. All bays contained the required *H. stipulacea* beds and adjacent unvegetated sandy substrate, providing natural control habitats. These sites are located along the southwestern coast of St. Thomas. Fortuna Bay, the westernmost site, is unprotected from prevailing eastern winds and tidal currents. Brewers Bay is a highly protected inlet, sheltered from wind and tidal flow, situated between Fortuna Bay and Lindbergh Bay. In contrast, Lindbergh Bay is semi-protected and faces south.
+
+All fieldwork was conducted under permit from the U.S. Virgin Islands Department of Planning and Natural Resources (#DFW25023T).
+
+## Sampling Schedule
+
+A team of divers conducted sediment core sampling and biological monitoring at five time points, designed to capture the rapid loss and remineralization of carbon following disturbance. Pre-disturbance sampling occurred in May 2025, followed by four post-disturbance events: one month (June 2025) to capture immediate carbon loss, two months (July 2025) and four months (September 2025) to capture intermediate sediment stabilization, and six months (November 2025) to assess longer-term recovery or equilibrium. These intervals were selected to represent distinct stages of post-disturbance carbon dynamics, consistent with seagrass disturbance and blue-carbon studies documenting similar response timescales (Willette et al., 2020). These sampling intervals structured the sampling design, which combined sediment core collection and quadrat-based monitoring.
+
+## Sample Collection and Biological Monitoring
+
+In May 2025, fifteen 0.25 m² quadrats were established in H. stipulacea and adjacent unvegetated sand at each site (BB, FB, LB) using rebar stakes (quadrats 1–15 per habitat). Locations were selected haphazardly based on preliminary GPS surveys, placed ≥2 m from meadow edges and other quadrats, and georeferenced with a Garmin GPSMAP 67i. At each sampling, quadrats were photographed from 1 m height with a photo-quadrat frame and an OM SYSTEM Tough TG-7 camera. Images were analyzed in CoralNet using 20–240 random points per image to estimate percent cover, and visual cover estimates (0–100%) were recorded for comparison. Five blades per quadrat were measured for shoot height, and shoot density was quantified by counting all H. stipulacea within a 10 × 10 cm sub-quadrat.
+
+At each site, six sediment cores were collected from quadrats 13–15 in each habitat (three inside and three 1 m outside each quadrat) using 20 cm long, 7.6 cm diameter polycarbonate corers inserted to \~20 cm or refusal. Cores were capped, transported upright on ice to the UVI Environmental Analysis Laboratory, photographed, decanted of excess water, and frozen upright. After initial core collection, the remaining H. stipulacea quadrats were disturbed by hand- and shovel-removal of all biomass, and a rebar stake was drawn through both vegetated and sand quadrats to standardize surface disturbance. During each subsequent sampling period, three new quadrats (from quadrats 1–12) per habitat were selected, twelve additional cores were collected, and quadrats were re-photographed, yielding a total of 180 sediment cores across all sites and sampling events.
+
+## Sediment Analysis
+
+Cores were partially thawed, extruded, split lengthwise (half archived, half processed; after Howard et al., 2014), and the working half was sectioned into 0–5 cm and 5–10 cm intervals. Each interval was split for grain-size and LOI analysis. Wet mass and volume were recorded, then samples were dried at 60°C to constant weight to calculate dry bulk density.
+
+(DBD = dry mass / original sample volume).
+
+Large fragments were removed, and sediments were homogenized using a SPEX 8000M Mixer/Mill.
+
+Percent organic matter (%OM) was determined using the loss-on-ignition (LOI) method.
+
+%OM = (dry mass before combustion -dry mass post combustion) / (dry mass before combustion) \* 100
+
+Percent organic carbon (%OC) was estimated from %OM using a region and species specific calibration curve.
+
+%OC = -0.63 + 0.4 \* %OM.
+
+Sediment carbon density (SCD) was then calculated for each subsample.
+
+SCD = DBD \* (%OC / 100)
+
+# Preliminary Statistical Analysis
+
+## Sediment Carbon Density
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+#load libraries
+library(tidyverse)
+library(readxl)
+library(ggplot2)
+library(dplyr)
+library(car)
+library(emmeans)
+
+#load data
+sed <- read_xlsx("../data/seddataR.xlsx")
+
+# average SCD dataframe
+SCD_avg <- sed %>%
+  group_by(SITE, TREATMENT, TIME) %>%
+  summarise(
+    mean_SCD = mean(SCD, na.rm = TRUE),
+    sd_SCD   = sd(SCD, na.rm = TRUE),
+    n        = n(),
+    se_SCD   = sd_SCD / sqrt(n)
+  ) %>%
+  ungroup()
+
+# GGPLOT for avg SCD per time and treatment at each site
+SCDSiteTreatmentTime_mean <- ggplot(
+  SCD_avg,
+  aes(
+    x = TIME,
+    y = mean_SCD,
+    color = SITE,
+    linetype = TREATMENT,
+    group = interaction(SITE, TREATMENT)
+  )
+) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 2) +
+  geom_errorbar(aes(ymin = mean_SCD - se_SCD,
+                    ymax = mean_SCD + se_SCD),
+                width = 0.1) +
+  labs(
+    x = "Sampling Period",
+    y = "Mean sediment carbon density (mg C cm^-3)",
+    color = "Site",
+    linetype = "Treatment"
+  ) +
+  theme_bw()
+
+# make sure TIME is treated as a factor
+SCD_avg <- SCD_avg |>
+  mutate(TIME = factor(TIME))
+
+# helper function to plot one site
+plot_site_scd <- function(site_code) {
+  ggplot(
+    filter(SCD_avg, SITE == site_code),
+    aes(
+      x = TIME,
+      y = mean_SCD,
+      color = TREATMENT,
+      group = TREATMENT
+    )
+  ) +
+    geom_line(linewidth = 1) +
+    geom_point(size = 2) +
+    geom_errorbar(
+      aes(
+        ymin = mean_SCD - se_SCD,
+        ymax = mean_SCD + se_SCD
+      ),
+      width = 0.1
+    ) +
+    labs(
+      x = "Sampling period",
+      y = "Average SCD (mg C cm^-3)",
+      color = "Treatment"
+    ) +
+    theme_bw()
+}
+
+# three separate plots
+SCD_BB <- plot_site_scd("BB")
+SCD_FB <- plot_site_scd("FB")
+SCD_LB <- plot_site_scd("LB")
+
+# make sure TIME is a factor
+sed <- sed |>
+  mutate(TIME = factor(TIME))
+
+# helper function: boxplots for one site
+plot_site_scd_box <- function(site_code) {
+  ggplot(
+    filter(sed, SITE == site_code),
+    aes(
+      x = TIME,
+      y = SCD,
+      fill = TREATMENT
+    )
+  ) +
+    geom_boxplot(position = position_dodge(width = 0.8)) +
+    labs(
+      x = "Sampling period",
+      y = "Sediment carbon density (mg C cm^-3)",
+      fill = "Treatment"
+    ) +
+    theme_bw()
+}
+
+# three separate boxplots
+SCD_BB_box <- plot_site_scd_box("BB")
+SCD_FB_box <- plot_site_scd_box("FB")
+SCD_LB_box <- plot_site_scd_box("LB")
+```
+
+Average Sediment Carbon Density over Time at Brewers Bay
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+SCD_BB
+SCD_BB_box
+```
+
+Average Sediment Carbon Density over Time at Fortuna Bay
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+SCD_FB
+SCD_FB_box
+```
+
+Average Sediment Carbon Density over Time at Lindbergh Bay
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+SCD_LB
+SCD_LB_box
+```
+
+Average SCD over Time and Treatment
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+# make sure TIME is categorical
+sed2 <- sed |>
+  mutate(TIME = factor(TIME))
+
+SCD_treat_time <- sed2 |>
+  group_by(TREATMENT, TIME) |>
+  summarise(
+    mean_SCD = mean(SCD, na.rm = TRUE),
+    sd_SCD   = sd(SCD, na.rm = TRUE),
+    n        = n(),
+    se_SCD   = sd_SCD / sqrt(n),
+    .groups  = "drop"
+  )
+
+SCD_treat_time_plot <- ggplot(
+  SCD_treat_time,
+  aes(
+    x = TIME,
+    y = mean_SCD,
+    color = TREATMENT,
+    group = TREATMENT
+  )
+) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 2) +
+  geom_errorbar(
+    aes(
+      ymin = mean_SCD - se_SCD,
+      ymax = mean_SCD + se_SCD
+    ),
+    width = 0.1
+  ) +
+  labs(
+    x = "Sampling period",
+    y = "Mean sediment carbon density (mg C cm^-3)",
+    color = "Treatment"
+  ) +
+  theme_bw()
+
+SCD_treat_time_plot
+
+sed_box <- sed |>
+  mutate(
+    TIME = factor(TIME),
+    TREATMENT = factor(TREATMENT)
+  )
+
+SCD_treat_time_box <- ggplot(
+  sed_box,
+  aes(
+    x = TIME,
+    y = SCD,
+    fill = TREATMENT
+  )
+) +
+  geom_boxplot(position = position_dodge(width = 0.8)) +
+  labs(
+    x = "Sampling period",
+    y = "Sediment carbon density (mg C cm^-3)",
+    fill = "Treatment"
+  ) +
+  theme_bw()
+
+SCD_treat_time_box
+```
+
+Sediment Carbon Density over time for *H. stipulacea* inside and Sand inside (all sites included)
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+sed_box_filt <- sed |>
+  mutate(
+    TIME = factor(TIME),
+    TREATMENT = factor(TREATMENT)
+  ) |>
+  filter(!TREATMENT %in% c("SO", "HO"))   # keep only HI, SI (or whatever’s left)
+
+SCD_treat_time_box_noout <- ggplot(
+  sed_box_filt,
+  aes(
+    x = TIME,
+    y = SCD,
+    fill = TREATMENT
+  )
+) +
+  geom_boxplot(position = position_dodge(width = 0.8)) +
+  labs(
+    x = "Sampling period",
+    y = "Sediment carbon density (mg C cm^-3)",
+    fill = "Treatment"
+  ) +
+  theme_bw()
+
+SCD_treat_time_box_noout
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+plot_site_scd_box_hi_si <- function(site_code) {
+  ggplot(
+    filter(sed_box_filt, SITE == site_code),
+    aes(
+      x = TIME,
+      y = SCD,
+      fill = TREATMENT
+    )
+  ) +
+    geom_boxplot(position = position_dodge(width = 0.8)) +
+    labs(
+      x = "Sampling period",
+      y = "Sediment carbon density (mg C cm^-3)",
+      fill = "Treatment"
+    ) +
+    theme_bw()
+}
+
+# three separate plots
+SCD_BB_box_hi_si <- plot_site_scd_box_hi_si("BB")
+SCD_FB_box_hi_si <- plot_site_scd_box_hi_si("FB")
+SCD_LB_box_hi_si <- plot_site_scd_box_hi_si("LB")
+
+sed_filt <- sed |>
+  mutate(
+    TIME = factor(TIME),
+    TREATMENT = factor(TREATMENT)
+  ) |>
+  filter(!TREATMENT %in% c("SO", "HO"))   # drop SO and HO
+
+# 2. Summarize: mean SCD + SE for each SITE × TREATMENT × TIME
+SCD_means_site <- sed_filt |>
+  group_by(SITE, TREATMENT, TIME) |>
+  summarise(
+    mean_SCD = mean(SCD, na.rm = TRUE),
+    sd_SCD   = sd(SCD, na.rm = TRUE),
+    n        = n(),
+    se_SCD   = sd_SCD / sqrt(n),
+    .groups  = "drop"
+  )
+
+# 3. Helper function to make line+SE plot for one site
+plot_site_scd_line <- function(site_code) {
+  ggplot(
+    filter(SCD_means_site, SITE == site_code),
+    aes(
+      x = TIME,
+      y = mean_SCD,
+      color = TREATMENT,
+      group = TREATMENT
+    )
+  ) +
+    geom_line(linewidth = 1) +
+    geom_point(size = 2) +
+    geom_errorbar(
+      aes(
+        ymin = mean_SCD - se_SCD,
+        ymax = mean_SCD + se_SCD
+      ),
+      width = 0.1
+    ) +
+    labs(
+      x = "Sampling period",
+      y = "Mean sediment carbon density (mg C cm^-3)",
+      color = "Treatment"
+    ) +
+    theme_bw()
+}
+
+# 4. Three separate plots
+SCD_BB_line <- plot_site_scd_line("BB")
+SCD_FB_line <- plot_site_scd_line("FB")
+SCD_LB_line <- plot_site_scd_line("LB")
+```
+
+SCD over time at Brewers for *H. stipulacea* inside and Sand inside
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+SCD_BB_box_hi_si
+SCD_BB_line
+```
+
+SCD over time at Fortuna for *H. stipulacea* inside and Sand inside
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+SCD_FB_box_hi_si
+SCD_FB_line
+```
+
+SCD over time at Lindbergh for *H. stipulacea* inside and Sand inside
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+SCD_LB_box_hi_si
+SCD_LB_line
+```
+
+## Attempting Statistics lol
+```{r}
+# make sure factors are set up (reuse sed from above)
+sed_mod <- sed |>
+  mutate(
+    SITE      = factor(SITE),
+    TIME      = factor(TIME),
+    TREATMENT = factor(
+      TREATMENT,
+      levels = c("HI", "HO", "SI", "SO")  # adjust if needed
+    )
+  )
+
+BB_T1 <- sed_mod |>
+  filter(SITE == "BB", TIME == "1")
+
+BB_T1_lm <- lm(SCD ~ TREATMENT, data = BB_T1)
+
+# ANOVA table for treatment at Brewers, Time 1
+Anova(BB_T1_lm, type = 3)
+
+# Treatment means + pairwise tests
+emm_BB_T1_direct <- emmeans(BB_T1_lm, ~ TREATMENT)
+emm_BB_T1_direct
+pairs(emm_BB_T1_direct, adjust = "tukey")
+
+```
