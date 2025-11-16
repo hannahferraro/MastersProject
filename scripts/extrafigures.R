@@ -219,3 +219,156 @@ emm_BB_T1_direct
 pairs(emm_BB_T1_direct, adjust = "tukey")
 
 ```
+
+##########
+# Percent Cover
+##########
+# Figure of percent cover with two sifferent plots together of site habitat and time point. the habitats are the two different plots
+
+cover_summary <- cover %>%
+  group_by(SITE, HABITAT, TIMEPT) %>%
+  summarize(
+    mean_cover = mean(PERCENTCOVER, na.rm = TRUE),
+    sd_cover   = sd(PERCENTCOVER, na.rm = TRUE),
+    n          = n(),
+    se_cover   = sd_cover / sqrt(n),
+    .groups    = "drop"
+  )
+
+ggplot(cover_summary,
+       aes(x = TIMEPT,
+           y = mean_cover,
+           color = SITE,
+           group = SITE)) +
+  geom_line() +
+  geom_point(size = 2) +
+  geom_errorbar(aes(ymin = mean_cover - se_cover,
+                    ymax = mean_cover + se_cover),
+                width = 0.15) +
+  labs(
+    x = "Time point",
+    y = "Percent cover (%)",
+    color = "Site"
+  ) +
+  theme_bw()
+
+# percent cover over time for site and habitat as one figure, this time H is solid lines and S is dashed lines, kinda hard to see though
+
+cover_summary <- cover %>%
+  group_by(SITE, HABITAT, TIMEPT) %>%
+  summarize(
+    mean_cover = mean(PERCENTCOVER, na.rm = TRUE),
+    sd_cover   = sd(PERCENTCOVER, na.rm = TRUE),
+    n          = n(),
+    se_cover   = sd_cover / sqrt(n),
+    .groups    = "drop"
+  )
+
+ggplot(
+  cover_summary,
+  aes(
+    x = TIMEPT,
+    y = mean_cover,
+    color = SITE,
+    linetype = HABITAT,
+    group = interaction(SITE, HABITAT)
+  )
+) +
+  geom_line() +
+  geom_point(size = 2) +
+  geom_errorbar(
+    aes(ymin = mean_cover - se_cover,
+        ymax = mean_cover + se_cover),
+    width = 0.15
+  ) +
+  scale_linetype_manual(
+    values = c("H" = "solid",
+               "S" = "dashed")
+  ) +
+  labs(
+    x = "Time point",
+    y = "Percent cover (%)",
+    color = "Site",
+    linetype = "Habitat"
+  ) +
+  theme_bw()
+
+######
+
+sed <- read_xlsx("data/seddataR.xlsx")
+sed_long <- sed %>%
+  select(SITE, TIME, PERCENTCOVER, SCD) %>%
+  pivot_longer(
+    cols = c(PERCENTCOVER, SCD),
+    names_to = "metric",
+    values_to = "value"
+  ) %>%
+  group_by(SITE, TIME, metric) %>%
+  summarize(
+    mean_value = mean(value, na.rm = TRUE),
+    sd_value   = sd(value, na.rm = TRUE),
+    n          = n(),
+    se_value   = sd_value / sqrt(n),
+    .groups    = "drop"
+  )
+
+# make TIMEPT categorical if it's like T1, T2, T3
+sed_long <- sed_long %>%
+  mutate(TIME = factor(TIME))
+
+# plot percent cover & SCD over time and sites
+ggplot(
+  sed_long,
+  aes(
+    x = TIME,
+    y = mean_value,
+    color = SITE,
+    group = SITE
+  )
+) +
+  geom_line() +
+  geom_point(size = 2) +
+  geom_errorbar(
+    aes(ymin = mean_value - se_value,
+        ymax = mean_value + se_value),
+    width = 0.15
+  ) +
+  facet_wrap(~ metric, scales = "free_y", labeller = labeller(
+    metric = c(
+      PERCENTCOVER = "Percent cover (%)",
+      SCD          = "Sediment carbon density"
+    )
+  )) +
+  labs(
+    x = "Time point",
+    y = NULL,
+    color = "Site"
+  ) +
+  theme_bw()
+#####
+library(dplyr)
+library(ggplot2)
+
+scatter_dat <- sed %>%
+  filter(!is.na(PERCENTCOVER), !is.na(SCD)) %>%
+  mutate(
+    TIME = factor(TIME),
+    SITE = factor(SITE)
+  )
+
+ggplot(
+  scatter_dat,
+  aes(x = PERCENTCOVER,
+      y = SCD,
+      color = TIME,
+      group = TIME)
+) +
+  geom_point(size = 2, alpha = 0.8) +
+  geom_path(alpha = 0.6) +  # connects points in time order
+  facet_wrap(~ SITE) +
+  labs(
+    x = "Percent cover (%)",
+    y = "Sediment carbon density",
+    color = "Time"
+  ) +
+  theme_bw()
