@@ -54,9 +54,7 @@ Sediment carbon density (SCD) was then calculated for each subsample.
 
 SCD = DBD \* (%OC / 100)
 
-# Preliminary Statistical Analysis
-
-## Sediment Carbon Density
+###### 
 
 ```{r}
 #| echo: false
@@ -73,6 +71,7 @@ library(emmeans)
 
 #load data
 sed <- read_xlsx("../data/seddataR.xlsx")
+cover <-read_xlsx("../data/quadratcover.xlsx")
 
 # average SCD dataframe
 SCD_avg <- sed %>%
@@ -175,43 +174,17 @@ SCD_FB_box <- plot_site_scd_box("FB")
 SCD_LB_box <- plot_site_scd_box("LB")
 ```
 
-Average Sediment Carbon Density over Time at Brewers Bay
+# Preliminary Results
 
+::: {.panel-tabset}
+
+## Sediment Carbon Density
+Average SCD by Treatment over Time
 ```{r}
 #| echo: false
 #| warning: false
 #| message: false
-SCD_BB
-SCD_BB_box
-```
 
-Average Sediment Carbon Density over Time at Fortuna Bay
-
-```{r}
-#| echo: false
-#| warning: false
-#| message: false
-SCD_FB
-SCD_FB_box
-```
-
-Average Sediment Carbon Density over Time at Lindbergh Bay
-
-```{r}
-#| echo: false
-#| warning: false
-#| message: false
-SCD_LB
-SCD_LB_box
-```
-
-Average SCD over Time and Treatment
-
-```{r}
-#| echo: false
-#| warning: false
-#| message: false
-# make sure TIME is categorical
 sed2 <- sed |>
   mutate(TIME = factor(TIME))
 
@@ -225,7 +198,7 @@ SCD_treat_time <- sed2 |>
     .groups  = "drop"
   )
 
-SCD_treat_time_plot <- ggplot(
+SCD_treat_time_lineplot <- ggplot(
   SCD_treat_time,
   aes(
     x = TIME,
@@ -250,8 +223,9 @@ SCD_treat_time_plot <- ggplot(
   ) +
   theme_bw()
 
-SCD_treat_time_plot
+SCD_treat_time_lineplot
 
+# boxplot
 sed_box <- sed |>
   mutate(
     TIME = factor(TIME),
@@ -277,171 +251,163 @@ SCD_treat_time_box <- ggplot(
 SCD_treat_time_box
 ```
 
-Sediment Carbon Density over time for *H. stipulacea* inside and Sand inside (all sites included)
+
+## Grain Size
+
+## Percent Cover
 
 ```{r}
 #| echo: false
 #| warning: false
 #| message: false
-sed_box_filt <- sed |>
-  mutate(
-    TIME = factor(TIME),
-    TREATMENT = factor(TREATMENT)
-  ) |>
-  filter(!TREATMENT %in% c("SO", "HO"))   # keep only HI, SI (or whatever’s left)
 
-SCD_treat_time_box_noout <- ggplot(
-  sed_box_filt,
+cover_summary <- cover %>%
+  group_by(SITE, HABITAT, TIMEPT) %>%
+  summarize(
+    mean_cover = mean(PERCENTCOVER, na.rm = TRUE),
+    sd_cover   = sd(PERCENTCOVER, na.rm = TRUE),
+    n          = n(),
+    se_cover   = sd_cover / sqrt(n),
+    .groups    = "drop"
+  )
+
+####
+
+# H habitat only
+cover_H <- cover_summary %>%
+  filter(HABITAT == "H")
+
+p_H <- ggplot(
+  cover_H,
   aes(
-    x = TIME,
-    y = SCD,
-    fill = TREATMENT
+    x = TIMEPT,
+    y = mean_cover,
+    color = SITE,
+    group = SITE
   )
 ) +
-  geom_boxplot(position = position_dodge(width = 0.8)) +
+  geom_line() +
+  geom_point(size = 2) +
+  geom_errorbar(
+    aes(ymin = mean_cover - se_cover,
+        ymax = mean_cover + se_cover),
+    width = 0.15
+  ) +
   labs(
-    x = "Sampling period",
-    y = "Sediment carbon density (mg C cm^-3)",
-    fill = "Treatment"
+    x = "Time point",
+    y = "Percent cover (%)",
+    color = "Site"
   ) +
   theme_bw()
 
-SCD_treat_time_box_noout
-```
+# S habitat only
+cover_S <- cover_summary %>%
+  filter(HABITAT == "S")
 
-```{r}
-#| echo: false
-#| warning: false
-#| message: false
-plot_site_scd_box_hi_si <- function(site_code) {
-  ggplot(
-    filter(sed_box_filt, SITE == site_code),
-    aes(
-      x = TIME,
-      y = SCD,
-      fill = TREATMENT
-    )
-  ) +
-    geom_boxplot(position = position_dodge(width = 0.8)) +
-    labs(
-      x = "Sampling period",
-      y = "Sediment carbon density (mg C cm^-3)",
-      fill = "Treatment"
-    ) +
-    theme_bw()
-}
-
-# three separate plots
-SCD_BB_box_hi_si <- plot_site_scd_box_hi_si("BB")
-SCD_FB_box_hi_si <- plot_site_scd_box_hi_si("FB")
-SCD_LB_box_hi_si <- plot_site_scd_box_hi_si("LB")
-
-sed_filt <- sed |>
-  mutate(
-    TIME = factor(TIME),
-    TREATMENT = factor(TREATMENT)
-  ) |>
-  filter(!TREATMENT %in% c("SO", "HO"))   # drop SO and HO
-
-# 2. Summarize: mean SCD + SE for each SITE × TREATMENT × TIME
-SCD_means_site <- sed_filt |>
-  group_by(SITE, TREATMENT, TIME) |>
-  summarise(
-    mean_SCD = mean(SCD, na.rm = TRUE),
-    sd_SCD   = sd(SCD, na.rm = TRUE),
-    n        = n(),
-    se_SCD   = sd_SCD / sqrt(n),
-    .groups  = "drop"
+p_S <- ggplot(
+  cover_S,
+  aes(
+    x = TIMEPT,
+    y = mean_cover,
+    color = SITE,
+    group = SITE
   )
-
-# 3. Helper function to make line+SE plot for one site
-plot_site_scd_line <- function(site_code) {
-  ggplot(
-    filter(SCD_means_site, SITE == site_code),
-    aes(
-      x = TIME,
-      y = mean_SCD,
-      color = TREATMENT,
-      group = TREATMENT
-    )
+) +
+  geom_line() +
+  geom_point(size = 2) +
+  geom_errorbar(
+    aes(ymin = mean_cover - se_cover,
+        ymax = mean_cover + se_cover),
+    width = 0.15
   ) +
-    geom_line(linewidth = 1) +
-    geom_point(size = 2) +
-    geom_errorbar(
-      aes(
-        ymin = mean_SCD - se_SCD,
-        ymax = mean_SCD + se_SCD
-      ),
-      width = 0.1
-    ) +
-    labs(
-      x = "Sampling period",
-      y = "Mean sediment carbon density (mg C cm^-3)",
-      color = "Treatment"
-    ) +
-    theme_bw()
-}
+  labs(
+    x = "Time point",
+    y = "Percent cover (%)",
+    color = "Site"
+  ) +
+  theme_bw()
 
-# 4. Three separate plots
-SCD_BB_line <- plot_site_scd_line("BB")
-SCD_FB_line <- plot_site_scd_line("FB")
-SCD_LB_line <- plot_site_scd_line("LB")
+```
+*H. stipulacea* percent cover over time
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+p_H
+```
+Sand percent cover over time
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+p_S
 ```
 
-SCD over time at Brewers for *H. stipulacea* inside and Sand inside
+
+:::
+
+## Site Specifics 
+
+::: {.panel-tabset}
+
+### Brewers Bay
+
+::: {.panel-tabset}
+
+#### Sediment Carbon Density
 
 ```{r}
 #| echo: false
 #| warning: false
 #| message: false
-SCD_BB_box_hi_si
-SCD_BB_line
+SCD_BB
+SCD_BB_box
 ```
 
-SCD over time at Fortuna for *H. stipulacea* inside and Sand inside
+#### Grain Size
+
+#### Percent Cover
+
+:::
+
+### Fortuna Bay
+
+::: {.panel-tabset}
+
+#### Sediment Carbon Density
 
 ```{r}
 #| echo: false
 #| warning: false
 #| message: false
-SCD_FB_box_hi_si
-SCD_FB_line
+SCD_FB
+SCD_FB_box
 ```
 
-SCD over time at Lindbergh for *H. stipulacea* inside and Sand inside
+#### Grain Size
+
+#### Percent Cover
+
+:::
+
+### Lindbergh Bay
+
+::: {.panel-tabset}
+
+#### Sediment Carbon Density
 
 ```{r}
 #| echo: false
 #| warning: false
 #| message: false
-SCD_LB_box_hi_si
-SCD_LB_line
+SCD_LB
+SCD_LB_box
 ```
 
-## Attempting Statistics lol
-```{r}
-# make sure factors are set up (reuse sed from above)
-sed_mod <- sed |>
-  mutate(
-    SITE      = factor(SITE),
-    TIME      = factor(TIME),
-    TREATMENT = factor(
-      TREATMENT,
-      levels = c("HI", "HO", "SI", "SO")  # adjust if needed
-    )
-  )
+#### Grain Size
 
-BB_T1 <- sed_mod |>
-  filter(SITE == "BB", TIME == "1")
+#### Percent Cover
 
-BB_T1_lm <- lm(SCD ~ TREATMENT, data = BB_T1)
+:::
 
-# ANOVA table for treatment at Brewers, Time 1
-Anova(BB_T1_lm, type = 3)
-
-# Treatment means + pairwise tests
-emm_BB_T1_direct <- emmeans(BB_T1_lm, ~ TREATMENT)
-emm_BB_T1_direct
-pairs(emm_BB_T1_direct, adjust = "tukey")
-
-```
+:::
