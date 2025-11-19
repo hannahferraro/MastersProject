@@ -1,0 +1,13 @@
+Hannah Ferraro Masters Thesis
+
+How to get to complete dataset from all of the data!
+- This includes the YSI data, the percent cover data determined by randomized points, the sediment data, and the leaf measurements and shoot numbers.
+
+1. open leafsummary.R in the scripts folder and run code
+- This script takes the original leaf data and produces averages, SE, and SD for leaf lenghts for each site, quadrat and time. It then writes a CSV in the outputs folder called summary_leaf.csv which will be used in the joiningalldata.R script
+
+2. ysisummary.R in the scripts folder and run code
+- This script takes the original ysi data and produces averages, SE, and SD for each variable (temp, salinity, DO, pH, turbidiry) for each site, and time. It then writes a CSV in the outputs folder called ysisummary.csv which will be used in the joiningalldata.R script
+
+3. open joiningalldata.R in scripts folder and run code
+- This script joins the sediment data, the leaf summary data, the ysi summary data and the quadrat percent cover data to one dataframe called sed and saves it to the output folder called completedata.csv which will be used in all other scripts. 
