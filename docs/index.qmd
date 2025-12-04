@@ -20,6 +20,14 @@ This thesis investigates how physical disturbance affects sediment carbon storag
 
 ## Site Selection
 
+```{r}
+#| echo: false
+#| fig-cap: Map of St. Thomas, U.S. Virgin Islands. The main panel shows island topography and coastline with letters marking the study sites A) Fortuna Bay, B) Brewers Bay, and C) Lindbergh Bay. The upper-right inset shows the location of St. Thomas in the Caribbean, and the lower panels provide enlarged views of each study bay.
+
+knitr::include_graphics("ABCmap.jpg")
+
+```
+
 This study was conducted in St. Thomas, U.S. Virgin Islands, an unincorporated territory of the United States in the eastern Caribbean. Sites were selected through preliminary snorkel surveys conducted between May and July of 2025. Snorkelers were deployed at three locations, Fortuna Bay (FB), Lindbergh Bay (LB), and Brewers Bay (BB), St. Thomas, USVI, to verify that each site met the basic requirements for this study. All bays contained the required *H. stipulacea* beds and adjacent unvegetated sandy substrate, providing natural control habitats. These sites are located along the southwestern coast of St. Thomas. Fortuna Bay, the westernmost site, is unprotected from prevailing eastern winds and tidal currents. Brewers Bay is a highly protected inlet, sheltered from wind and tidal flow, situated between Fortuna Bay and Lindbergh Bay. In contrast, Lindbergh Bay is semi-protected and faces south.
 
 All fieldwork was conducted under permit from the U.S. Virgin Islands Department of Planning and Natural Resources (#DFW25023T).
@@ -38,21 +46,33 @@ At each site, six sediment cores were collected from quadrats 13–15 in each ha
 
 Cores were partially thawed, extruded, split lengthwise (half archived, half processed; after Howard et al., 2014), and the working half was sectioned into 0–5 cm and 5–10 cm intervals. Each interval was split for grain-size and LOI analysis. Wet mass and volume were recorded, then samples were dried at 60°C to constant weight to calculate dry bulk density.
 
-(DBD = dry mass / original sample volume).
+$$
+\mathrm{DBD} = \frac{\text{dry mass}}{\text{original sample volume}}
+$$
 
 Large fragments were removed, and sediments were homogenized using a SPEX 8000M Mixer/Mill.
 
 Percent organic matter (%OM) was determined using the loss-on-ignition (LOI) method.
 
-%OM = (dry mass before combustion -dry mass post combustion) / (dry mass before combustion) \* 100
+$$
+\%OM
+= \frac{\text{dry mass pre combustion} - \text{dry mass post combustion}}
+       {\text{dry mass pre combustion}}
+  \times 100
+$$
 
 Percent organic carbon (%OC) was estimated from %OM using a region and species specific calibration curve.
 
-%OC = -0.63 + 0.4 \* %OM.
+$$
+\%OC = -0.63 + 0.40 \times \%OM
+$$
 
 Sediment carbon density (SCD) was then calculated for each subsample.
 
-SCD = DBD \* (%OC / 100)
+$$
+\mathrm{SCD} = \mathrm{DBD} \times \left(\frac{\%OC}{100}\right)
+$$
+
 
 ###### 
 
@@ -102,7 +122,7 @@ SCDSiteTreatmentTime_mean <- ggplot(
                 width = 0.1) +
   labs(
     x = "Sampling Period",
-    y = "Mean sediment carbon density (mg C cm^-3)",
+    y = "Mean sediment carbon density (g C cm^-3)",
     color = "Site",
     linetype = "Treatment"
   ) +
@@ -134,7 +154,7 @@ plot_site_scd <- function(site_code) {
     ) +
     labs(
       x = "Sampling period",
-      y = "Average SCD (mg C cm^-3)",
+      y = "Average SCD (g C cm^-3)",
       color = "Treatment"
     ) +
     theme_bw()
@@ -162,7 +182,7 @@ plot_site_scd_box <- function(site_code) {
     geom_boxplot(position = position_dodge(width = 0.8)) +
     labs(
       x = "Sampling period",
-      y = "Sediment carbon density (mg C cm^-3)",
+      y = "Sediment carbon density (g C cm^-3)",
       fill = "Treatment"
     ) +
     theme_bw()
@@ -218,7 +238,7 @@ SCD_treat_time_lineplot <- ggplot(
   ) +
   labs(
     x = "Sampling period",
-    y = "Mean sediment carbon density (mg C cm^-3)",
+    y = "Mean sediment carbon density (g C cm^-3)",
     color = "Treatment"
   ) +
   theme_bw()
@@ -243,7 +263,7 @@ SCD_treat_time_box <- ggplot(
   geom_boxplot(position = position_dodge(width = 0.8)) +
   labs(
     x = "Sampling period",
-    y = "Sediment carbon density (mg C cm^-3)",
+    y = "Sediment carbon density (g C cm^-3)",
     fill = "Treatment"
   ) +
   theme_bw()
@@ -262,7 +282,7 @@ SCD_treat_time_box
 #| message: false
 
 cover_summary <- cover %>%
-  group_by(SITE, HABITAT, TIMEPT) %>%
+  group_by(SITE, HABITAT, TIME) %>%
   summarize(
     mean_cover = mean(PERCENTCOVER, na.rm = TRUE),
     sd_cover   = sd(PERCENTCOVER, na.rm = TRUE),
@@ -280,7 +300,7 @@ cover_H <- cover_summary %>%
 p_H <- ggplot(
   cover_H,
   aes(
-    x = TIMEPT,
+    x = TIME,
     y = mean_cover,
     color = SITE,
     group = SITE
@@ -307,7 +327,7 @@ cover_S <- cover_summary %>%
 p_S <- ggplot(
   cover_S,
   aes(
-    x = TIMEPT,
+    x = TIME,
     y = mean_cover,
     color = SITE,
     group = SITE
@@ -366,7 +386,11 @@ SCD_BB_box
 
 #### Grain Size
 
+COMING SOON
+
 #### Percent Cover
+
+COMING SOON
 
 :::
 
@@ -386,7 +410,11 @@ SCD_FB_box
 
 #### Grain Size
 
+COMING SOON
+
 #### Percent Cover
+
+COMING SOON
 
 :::
 
@@ -406,7 +434,11 @@ SCD_LB_box
 
 #### Grain Size
 
+COMING SOON
+
 #### Percent Cover
+
+COMING SOON
 
 :::
 

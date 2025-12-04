@@ -3,6 +3,8 @@
 
 # load libraries
 library(tidyverse)
+library(readxl)
+library(dplyr)
 
 # load data
 
@@ -12,7 +14,7 @@ leafsum <- read_csv("outputs/summary_leaf.csv") %>%
 
 ysisum <- read_csv("outputs/ysi_summary.csv")%>%
   mutate(TIME = factor(TIME)) %>%
-  mutate(Site = factor(SITE))
+  mutate(SITE = factor(SITE))
 
 sedog <- read_xlsx("data/seddataR.xlsx")  %>% 
   mutate(TIME = factor(TIME)) %>%
